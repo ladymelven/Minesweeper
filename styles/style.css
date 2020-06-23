@@ -1,0 +1,153 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* GENERAL AND CONTAINERS STYLING */
+
+.page-heading {
+	margin-top: 1em;
+	text-align: center;
+}
+
+.info {
+	margin: 1em auto;
+	font-family: monospace;
+	text-align: center;
+}
+
+	.info__text {
+		display: none;
+		margin-top: 1em;
+	}
+
+.button {
+	padding: .2em;
+	margin: .5em auto;
+}
+
+.button:active,
+.button:focus {
+	outline: none;
+}
+
+.grid {
+	margin: auto;
+	padding: 1px;
+	background-color: snow;
+	border: 2px solid silver;
+	border-radius: 3px;
+	box-shadow: 0 0 5px .5px black;
+	display: none;
+	cursor: default;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+}
+
+.backdrop {
+	height: 100vh;
+	width: 100vw;
+	display: none;
+	background-color: rgba(0, 0, 0, .7);
+	position: absolute;
+	z-index: 10;
+}
+
+.prompt {
+	display: none;
+	margin: 20vh auto auto;
+	padding: 3em;
+	background-color: gainsboro;
+	border: 2px solid slategrey;
+	border-radius: 10px;
+	box-shadow: 2px 2px 20px 2px black;
+	/* height: 30vh; */
+	width: 30vw;
+	text-align: center;
+}
+
+	.prompt__heading {
+		margin-bottom: 1em;
+	}
+
+	.prompt__input {
+		margin-bottom: .5em;
+	}
+
+	.prompt__text {
+		font-size: 18px;
+		margin: .5em auto;
+	}
+
+	.prompt__button {
+		padding-left: .5em;
+		padding-right: .5em;
+		margin: 1em .5em 0 .5em;
+	}
+
+/* STYLING CELLS */
+
+.grid div {
+	border: .5px solid slategrey;
+	border-radius: 3px;
+	font-family: monospace;
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+}
+
+.hidden::before {
+	box-sizing: content-box;
+	content: "";
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(135deg, white, silver);
+	border-radius: 3px;
+	border-top: .5px solid gainsboro;
+	border-left: .5px solid gainsboro;
+	border-bottom: .5px solid grey;
+	border-right: .5px solid grey;
+	position: absolute;
+	z-index: 2;
+}
+
+.bomb {
+	background-image: url(img/bomb.png);
+	background-position: center;
+	background-size: cover;
+}
+
+.blown {
+	background-color: red;
+}
+
+.flagged::before {
+	box-sizing: content-box;
+	content: "";
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: url(img/flag.png), linear-gradient(135deg, white, silver);
+	background-position: center;
+	background-size: cover;
+	border-radius: 3px;
+	border-top: .5px solid gainsboro;
+	border-left: .5px solid gainsboro;
+	border-bottom: .5px solid grey;
+	border-right: .5px solid grey;
+	position: absolute;
+	z-index: 3;
+}
+
+.wrong::before {
+	background: red;
+}

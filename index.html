@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="styles/style.css">
+	<script type="text/javascript" src="scripts/app.js" defer></script>
+	<title>Minesweeper</title>
+</head>
+<body>
+	<div class="backdrop" id="backdrop">
+		<div class="prompt" id="config">
+			<form action="index.html" method="">
+				<h2 class="prompt__heading">Choose Difficulty Level</h2>
+				<input type="radio" class="prompt__input" name="level" value="beginner" id="beginner">
+				<label for="beginner">Beginner (8*8 field, 10 bombs)</label>
+				<br>
+				<input type="radio" class="prompt__input" name="level" value="inter" id="inter">
+				<label for="inter">Intermediate (16*16 field, 40 bombs)</label>
+				<br>
+				<input type="radio" class="prompt__input" name="level" value="hard" id="hard">
+				<label for="hard">Hard (30*16 field, 99 bombs)</label>
+				<br>
+				<button type="submit" name="button" class="button prompt__button">Let's play!</button>
+			</form>
+		</div>
+		<div class="prompt" id="restart">
+			<h2>You <span id="result"></span>!</h2>
+			<p class="prompt__text">Do you want to play again?</p>
+			<button type="button" class="button prompt__button" id="yes-button">Yes!</button>
+			<button type="button" class="button prompt__button" id="no-button">No</button>
+		</div>
+	</div>
+	<header class="container">
+		<h1 class="page-heading">Minesweeper</h1>
+	</header>
+	<main class="container">
+		<div class="info">
+			<button type="button" class="button" id="new-game-button">New Game</button>
+			<p class="info__text">Bombs left: <span id="bomb-count"></span></p>
+		</div>
+		<div class="grid"></div>
+	</main>
+</body>
+</html>
